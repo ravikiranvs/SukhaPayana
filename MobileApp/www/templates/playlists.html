@@ -1,0 +1,126 @@
+<!--<ion-view view-title="Playlists">
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="playlist in playlists" href="#/app/playlists/{{playlist.id}}">
+        {{playlist.title}}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
+-->
+
+<style>
+    #mapMain {
+        width: 100%;
+        height: 100%;
+    }
+    .searchContainer{
+    height: 50px;
+    width: 96%;
+    z-index: 1000000;
+    position: absolute;
+    top: 22px;
+    /* margin: 0 auto; */
+    display: table;
+    margin-left: 2%;
+    margin-right: 2%;
+    }
+    #searchLocation{
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    padding-left: 10px;
+    font-size: 17px;
+    }
+    .buttonHolder{
+     width: 80%;
+    height: 60px;
+    /* background-color: red; */
+    position: absolute;
+    bottom: 30px;
+    margin:0 auto;
+    margin-left: 8%;
+        
+    }
+    .confirmClass{
+        position:relative;
+        left:10px;
+    }
+    
+    .button-bar > .button {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -moz-box-flex: 1;
+    -moz-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    display: block;
+    overflow: hidden;
+    padding: 0 16px;
+    width: 0;
+    border-width: 1px 1px 1px 1px;
+    border-radius: 0;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/*.buttonHolderLeft{
+    display:inline-block;float:left;width:80%
+}*/
+.buttonHolderLeft{
+     width: 70%;
+    height: 60px;
+    
+    
+    bottom: 30px;
+    margin:0 auto;
+    margin-left: 8%;
+    display:inline-block;
+    float:left
+    }
+.buttonHolderRight{
+    display:inline-block;float:left;width:20%
+}
+.buttonLeftShow{
+    width:100%;
+    display:block;
+}
+.buttonRightHide{
+    display : none;
+}
+ 
+    
+    .scroll {
+        height: 100%;
+    }
+    a[href^="http://maps.google.com/maps"]{display:none !important}
+    a[href^="https://maps.google.com/maps"]{display:none !important}
+    
+    .gmnoprint a, .gmnoprint span, .gm-style-cc {
+        display:none;
+    }
+    .gmnoprint div {
+        background:none !important;
+    }
+</style>
+
+<ion-view view-title="Pick Locations">
+    <ion-content>
+        <div id="mapMain" data-tap-disabled="true" ng-init="initialize()"></div>
+        <div class="searchContainer">
+            <input type="text" id="searchLocation" placeholder="Search Location"/>   
+        </div>
+        <div class="buttonHolder">
+            <div ng-class="LocationsSelected ? 'buttonHolderLeft' : 'buttonLeftShow'">
+            <div class="button-bar">
+                <a class="button" ng-class="{'icon-left ion-checkmark-round' : isPickupSelected, 'active' : isPickup}" ng-click="toggleLocation(true)">Pick Up</a>
+                <a class="button" ng-class="{'icon-left ion-checkmark-round' : isDestinationSelected, 'active' : !isPickup}" ng-click="toggleLocation(false)">Destination</a>
+            </div>
+            </div>
+             <div ng-class="LocationsSelected ? 'buttonHolderRight' : 'buttonRightHide'" class="buttonRightHide">
+             <a class="button  ion-chevron-right button-calm confirmClass" ng-click="FindCarpool()"></a>
+                </div>
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,6 @@
+---
+applications:
+- name: try2-geo-db
+  env:
+    NODE_ENV: production
+    DOMAIN: http://try2-geo-db.cfapps.io

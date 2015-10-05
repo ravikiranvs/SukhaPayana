@@ -1,0 +1,164 @@
+<!--<ion-view view-title="Playlists">
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="playlist in playlists" href="#/app/playlists/{{playlist.id}}">
+        {{playlist.title}}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
+-->
+
+<style>
+    #map {
+        width: 100%;
+        height:50%;
+    }
+    .searchContainer{
+        height: 50px;
+        width: 96%;
+        z-index: 1000000;
+        position: absolute;
+        top: 22px;
+        /* margin: 0 auto; */
+        display: table;
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+    #searchLocation{
+        width: 100%;
+        height: 100%;
+        border-radius: 4px;
+        padding-left: 10px;
+        font-size: 17px;
+    }
+    .buttonHolder{
+        width: 80%;
+        height: 60px;
+        /* background-color: red; */
+        position: absolute;
+        bottom: 30px;
+        margin:0 auto;
+        margin-left: 8%;
+        
+    }
+    .confirmClass{
+        position:relative;
+        left:10px;
+    }
+    
+    .button-bar > .button {
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        -moz-box-flex: 1;
+        -moz-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        display: block;
+        overflow: hidden;
+        padding: 0 16px;
+        width: 0;
+        border-width: 1px 1px 1px 1px;
+        border-radius: 0;
+        text-align: center;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+}
+    
+  .scroll {
+        height: 100%;
+   }
+    .leftSpan{
+        display: inline-block;
+        float: left;
+        width: 54%;
+    }
+    .rightSpan {
+        display: inline-block;
+        float: right;
+        margin-left: 10px;
+        position: relative;
+        top: 20px;
+        width: 20%;
+    }
+
+    .ionScollCustCls{
+        width : 100%;
+        overflow: hidden;
+        height: 50%;
+        
+    }
+    .btnClsSubmit{
+        float: right;
+        display: inline-block;
+    }
+
+    a[href^="http://maps.google.com/maps"]{display:none !important}
+    a[href^="https://maps.google.com/maps"]{display:none !important}
+    
+    .gmnoprint a, .gmnoprint span, .gm-style-cc {
+        display:none;
+    }
+    .gmnoprint div {
+        background:none !important;
+    }
+    .custItemCls{    
+        border-color: 0px;
+        background-color: transparent;
+        color: #444;
+        position: relative;
+        z-index: 2;
+        display: block;
+        margin: -1px;
+        padding: 5px !important;
+        border-width: 0px !important;
+        border-style: solid;
+        font-size: 16px;
+
+    }
+    .selectedRoute{
+        background-color: #FFA726 !important;
+    }
+</style>
+
+<ion-view view-title="Choose Route">      
+    <ion-content scroll="false">
+        <div id="map" data-tap-disabled="true" ng-init="initialize()"></div>  
+        <ion-scroll class="ionScollCustCls">
+                <ion-view>
+                    <ion-nav-page title="title">
+                        <ion-content has-header="true" has-footer="true">
+                        <ion-list ng-show="carpools.length > 0">
+                            
+                            <ion-item type="item-link" class="custItemCls" ng-repeat="carpool in carpools">
+                                <a class="item item-thumbnail-left" ng-click="ShowRoute(carpool.routeReq, $index)" ng-class="{selectedRoute: $index == selectedRouteIndex}">
+                                    <img ng-src="{{carpool.profilePic}}">
+                                    <span class="leftSpan">
+                                    <h2>{{carpool.name}}</h2>
+                                    <p>Mutual Friends: {{carpool.mutualFriends}}</p>
+                                    <button class="button button-small btnCls" ng-click="ViewFbProfile(carpool.fbId)">
+                                        View Profile
+                                    </button>
+                                    </span>
+                                    <span class="rightSpan">
+                                    <button class="button button-positive ion-center btnCls btnClsSubmit" ng-click="SelectRoute(carpool)">
+                                        Request
+                                    </button>
+                                    </span>
+                                </a>
+                            </ion-item>
+                            
+
+                        </ion-list>
+                        
+                        <h2 ng-show="carpools.length == 0">
+                            No routes found.
+                        </h2>
+                        
+                        <ion-infinite-scroll></ion-infinite-scroll>
+                        </ion-content>
+                    </ion-nav-page>
+            </ion-view>
+       </ion-scroll>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,142 @@
+/* Empty. Add your own CSS if you like */
+body{
+    background-color: #ffe082 !important;
+}
+
+[nav-bar-transition="ios"] [nav-bar="active"] .bar, [nav-bar-transition="ios"] [nav-bar="entering"] .bar {
+    background: transparent;
+    background-color: #ffa726 !important;
+}
+
+.bar.bar-stable .title {
+    color: white !important;
+    background-color: #ffa726 !important;
+}
+
+.bar-stable .button.button-clear {
+    border-color: transparent;
+    background: none;
+    box-shadow: none;
+    color: white;
+    font-size: 17px;
+}
+
+.bar.bar-stable {
+    border-color: #b2b2b2;
+    background-color: #f8f8f8;
+    background-image: linear-gradient(0deg, #b2b2b2, #b2b2b2 50%, transparent 50%);
+    color: #444;
+    background-color: #ffa726 !important;
+}
+
+.scroll-content {
+    background-color: #ffe082 !important;
+}
+a.item {
+    background-color: white;
+    width: 98%;
+    margin: 0 auto;
+    margin-bottom: 14px;
+    border-radius: 4px;
+}
+span.leftSpan > h2{
+	   color: #2F4F4F;
+    font-weight: 500;
+}
+span.leftSpan p{
+	color: #2F4F4F;
+    
+}
+.btnCls{
+    border-color: #e36f20 !important;
+    background-color:#e36f20 !important;
+    color:white !important;
+}
+
+.scroll-view {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin-top: 10px;
+}
+.button.active, .button.activated {
+    border-color: btnCls;
+    border-color: #e36f20 !important;
+    background-color: #e36f20 !important;
+    color: white !important;
+    background-color: #e5e5e5;
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+.bar.bar-positive{
+    background-color: #ffa726 !important; 
+    border-color: #ffa726 !important; 
+    background-color: #ffa726;
+    background-image: linear-gradient(0deg, #ffa726, #ffa726 50%, transparent 50%) !important;
+}
+.startAppCls {
+    background: url('../img/startButton.png') center;
+    background-repeat: no-repeat;
+    display: table;
+    margin: 0 auto;
+    width: 140px;
+    height: 150px;
+    cursor: pointer;
+    
+}
+
+.spinDiv {
+    -webkit-animation:spin 4s linear infinite;
+    -moz-animation:spin 4s linear infinite;
+    animation:spin 4s linear infinite;
+}
+.button.button-calm {
+    border-color: #CFFF1D;
+    background-color: #CFFF1D;
+    color: #fff;
+}
+ 
+.totalScore {
+    width: 100%;
+    min-height: 50px;
+    border-bottom: 1px solid white;
+    overflow: hidden;
+}
+.leftText {
+    width: 60%;
+    height: 100%;
+    float: left;
+    display: inline-block;
+}
+.rightText {
+    width: 40%;
+    height: 100%;
+    float: right;
+    display: inline-block;
+}
+.totalPoints{
+  font-size: 45px;
+    color: #e36f20;
+    display : inline-block;
+    
+}
+.totalTextRight{
+         width: 100px;
+    font-size: 16px;
+    color: #e36f20;
+    padding: 14px;
+    display: inline-block;
+    line-height: 17px;
+    float: right;
+    text-align: right;
+}
+ .totalText {
+    width: 100px;
+    font-size: 20px;
+    color: #e36f20;
+    padding: 14px;
+    display: inline-block;
+    line-height: 20px;
+}
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }

@@ -1,0 +1,110 @@
+<ion-view view-title="Rewards">
+  <ion-content>
+    <div class="totalScore">
+      <div class="leftText"> 
+          <span class="totalText">
+            TOTAL POINTS
+        </span>
+        <span class="totalPoints">{{scorecard.score}}
+          </span>
+        </div>
+         <div class="rightText"> 
+            <span class="totalTextRight">
+                Level <br/>
+                {{scorecard.level}} of {{scorecard.totallevels}}
+            </span>
+        
+         </div>
+    </div>
+    <div class="list card">
+        <div class="priceItem" ng-click="RedeemPoints('Free parking for the first hour at ???????', -5)">
+          <div class="item item-avatar">
+            <img src="img/parking.png">
+            <h2>Free parking</h2>
+            <p>Free parking for the first hour at ???????</p>
+          </div>
+          <a class="item item-icon-left assertive" >
+            <i class="icon ion-bag"></i>
+            5 Points
+          </a>
+        </div>
+      <div class="priceItem" ng-click="RedeemPoints('25% off on ???????', -5)">
+          <div class="item item-avatar">
+            <img src="img/25-off.png">
+            <h2>25% off</h2>
+            <p>25% off on ???????</p>
+          </div>
+          <a class="item item-icon-left assertive" >
+            <i class="icon ion-bag"></i>
+            5 Points
+          </a>
+      </div>
+      <div class="priceItem" ng-click="RedeemPoints('Free movie tickets for 2 at ???????', -10)">
+        <div class="item item-avatar">
+          <img src="img/movie-tickets.png">
+          <h2>Free movie tickets</h2>
+          <p>Free movie tickets for 2 at ???????</p>
+        </div>
+        <a class="item item-icon-left assertive">
+          <i class="icon ion-bag"></i>
+          10 Points
+        </a>
+       </div>
+       <div class="priceItem" ng-click="RedeemPoints('50% off on ???????', -10)">
+          <div class="item item-avatar">
+            <img src="img/50-off.png">
+            <h2>50% off</h2>
+            <p>50% off on ???????</p>
+          </div>
+          <a class="item item-icon-left assertive" >
+            <i class="icon ion-bag"></i>
+            10 Points
+          </a>
+         </div>
+         <div class="priceItem" ng-click="RedeemPoints('Free meal at ???????', -5)">
+            <div class="item item-avatar">
+              <img src="img/meal.png">
+              <h2>Free meal</h2>
+              <p>Free meal at ???????</p>
+            </div>
+            <a class="item item-icon-left assertive" >
+              <i class="icon ion-bag"></i>
+              10 Points
+            </a>
+        </div>
+    </div>
+  </ion-content>
+</ion-view>
+<style>
+  .item-avatar{
+    border-bottom: none ; 
+  }
+  .assertive{
+        border-top: none;
+  }
+  a.item {
+    background-color: white;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 14px;
+    border-radius: 4px;
+}
+
+.card, .list-inset {
+     border-radius: 0px;
+    background-color: transparent; 
+}
+.card {
+  
+    box-shadow: none; 
+}
+.priceItem{
+  overflow: hidden;
+    margin-bottom: 15px;
+    border-radius: 0px;
+    box-shadow: 10px 4px 4px #cfcfcf;
+    cursor: pointer;
+}
+  
+  </style>
+  

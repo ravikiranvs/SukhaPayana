@@ -1,0 +1,275 @@
+<ion-view view-title="Sukha Payana">
+  
+  <ion-content>
+   <!-- <h2>score: {{scorecard.score}}</h2>
+    <h2>title: {{scorecard.title}}</h2>
+    <h2>quote: {{scorecard.quote}}</h2>
+    <h2>level: {{scorecard.level}}</h2>
+    <h2>levelscore: {{scorecard.levelscore}}</h2>
+    <h2>leveltotal: {{scorecard.leveltotal}}</h2>
+    <h2>levelprogress: {{scorecard.levelprogress}}</h2>
+    <h2>totalprogress: {{scorecard.totalprogress}}</h2>
+    <h2>levelup: {{scorecard.levelup}}</h2>
+    <h2>totallevels: {{scorecard.totallevels}}</h2>
+    <h2>prestige: {{scorecard.prestige}}</h2> -->
+    <h2 ng-show="message" class="carPollSuccess">
+      {{message}}
+    </h2>
+    
+          <div class="totalScore">
+              <div class="leftText"> 
+                  <span class="totalText">
+                    TOTAL POINTS
+                </span>
+                <span class="totalPoints">
+                  </span>
+                 </div>
+                 <div class="rightText"> 
+                    <span class="totalTextRight">
+                       Level <br/>
+                        {{level}} of {{totalLevels}}
+                    </span>
+                
+                 </div>
+           </div>
+           <div class="levelTextCls">
+              <div class="levelScoreCls">
+                  <table>
+                      <tr>
+                          <td> Level {{level}} -</td>
+                          <td> {{quote}}</td> 
+                       </tr>
+                  </table>
+                 
+               </div> 
+          </div>
+          <div class="levelPointsEarned">
+              <div class="levelPointsCenter">
+                Level Points Earned
+                </div>
+                <div class="pointsHolder">
+                    <div class="pointsTab" points="5">
+                        5 POINTS
+                     </div>
+                     <div class="pointsTab" points="10">
+                        10 POINTS
+                     </div>
+                     <div class="pointsTab" points="15">
+                        15 POINTS
+                     </div>
+                     <div class="pointsTab" points="20">
+                        20 POINTS
+                     </div>
+                 </div>
+           </div>
+           <div class="levelPointsEarned">
+                <div class="percentHolder">
+                    <div class="percentageComplete" style="display:none">
+                        
+                     </div>
+                 </div>
+                 <div class="levelPointsCenterDown">
+                    Level Progress Made
+                </div>
+           </div>
+           <div class="startAppCls" ng-hide="message" ng-click="Start()" ng-class="{spinDiv: LoginStarted}">
+             
+             </div>
+             
+             <div class="newbee" ng-show="message">
+             
+             </div>
+             
+             <a class="button icon-right ion-bag button-calm" ng-show="message" ng-click="RedeemScreen()">Redeme Points</a>
+            </div>
+  
+  </ion-content>
+</ion-view>
+<style>
+  .levelPointsCenterDown{
+    display: table;
+    margin: 0 auto;
+    font-size: 18px;
+    margin-top: 25px;
+    color: #e36f20;
+    margin-top: -20px; 
+  }
+  .totalScore{
+    width:100%;
+    min-height: 50px;
+    border-bottom: 1px solid white;
+    overflow : hidden; 
+  }
+  .leftText{
+    width:60%;
+    height: 100% ; 
+    float : left; 
+    display:inline-block; 
+    
+  }
+  .rightText{
+    width:40%;
+    height: 100% ; 
+    float : right; 
+    display:inline-block; 
+    
+  }
+ 
+  .totalText {
+    width: 100px;
+    font-size: 20px;
+    color: #e36f20;
+    padding: 14px;
+    display: inline-block;
+    line-height: 20px;
+}
+
+.totalPoints{
+  font-size: 45px;
+    color: #e36f20;
+    display : inline-block;
+    
+}
+.totalTextRight{
+         width: 100px;
+    font-size: 16px;
+    color: #e36f20;
+    padding: 14px;
+    display: inline-block;
+    line-height: 17px;
+    float: right;
+    text-align: right;
+}
+  
+ .levelTextCls{
+   width:100% ; 
+   min-height: 50px; 
+   
+ }
+ .levelPointsEarned{
+   width:100% ; 
+   min-height: 50px; 
+   
+ }
+ 
+ .levelScoreCls {
+    display: table;
+    margin: 0 auto;
+    font-size: 18px;
+    margin-top:25px;
+    color: #e36f20;
+}
+
+.levelPointsCenter{
+    display: table;
+    margin: 0 auto;
+    font-size: 18px;
+    margin-top:25px;
+    color: #e36f20;
+}
+.pointsHolder{
+    min-height: 50px; 
+    border:1px solid white; 
+    width:90%; 
+    margin:0 auto;
+    margin-top: 10px;
+    border-top : none;  
+}
+.percentHolder{
+    min-height: 50px; 
+    border:1px solid white; 
+    width:90%; 
+    margin:0 auto;
+    margin-top: 50px;
+    border-bottom : none;
+}
+.pointsTab {
+      width: 25%;
+    display: inline-block;
+    float: left;
+    height: 100%;
+    color: black;
+    border-right: 1px solid white;
+    text-align: center;
+    margin-top: 26px !important;
+    padding-top: 2px;
+   
+}
+.activePoint{
+      background-color: yellow;
+}
+.pointsHolder > .pointsTab:last-child{
+    border : none; 
+  }
+ .percentageComplete{
+    height: 23px;
+    width: 1px;
+    background-color: #CFFF1D;
+    font-size: 11px;
+    padding: 3px;
+    text-align: center;
+    color: black;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+ }
+ .carPollSuccess{
+   font-size: 20px;
+    color: black;
+    padding: 15px;
+ }
+  
+  /*For Mobile*/
+@media handheld, only screen and (max-width: 480px), only screen and (max-device-width: 480px) {
+	.pointsTab{
+		 font-size: 10px !important; 
+	}
+
+}
+
+.newbee {
+	background: url('img/imageedit_1_2051809836.gif') no-repeat -6px -3px;
+	width: 119px;
+	height: 118px;
+  display: table;
+    margin: 0 auto;
+    margin-top : 10px; 
+}
+
+.level1 {
+	background: url('img/imageedit_1_2051809836.gif') no-repeat -160px -3px;
+	width: 119px;
+	height: 118px;
+  display: table;
+  margin: 0 auto;
+  margin-top : 10px; 
+}
+
+  .carPollSuccess{
+   font-size: 15px;
+    color: black;
+    padding: 15px;
+ }
+
+
+.level2 {
+	background: url('img/imageedit_1_2051809836.gif') no-repeat -315px -3px;
+	width: 118px;
+	height: 118px;
+}
+
+.level3 {
+	background: url('img/imageedit_1_2051809836.gif') no-repeat -468px -3px;
+	width: 120px;
+	height: 119px;
+} 
+
+.button.button-calm {
+    border-color: #ffa726;
+    background-color: #ffa726;
+    color: #fff;
+    margin:0 auto ; 
+    display: table ; 
+    
+}
+  </style>
